@@ -287,8 +287,10 @@ class CartItem implements Arrayable, Jsonable
             //Скидки
             $maxTaxTotal = -26; //Скидки не могут превышать
             if($this->options->stop_price == 1){
-                $this->taxRate = -20;
-                return -20; 
+                //$this->taxRate = -20;
+                $this->taxRate = 0;
+                //return -20;
+                return 0;
             }
             if($this->taxRate < $maxTaxTotal){
                 return $this->taxRate;
